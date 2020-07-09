@@ -38,12 +38,11 @@ let {src, dest} = require('gulp'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify-es').default,
     imagemin = require('gulp-imagemin'),
-    webp = require('gulp-webp');
+    webp = require('gulp-webp'),
     webphtml = require('gulp-webp-html'),
     ttftowoff = require('gulp-ttf2woff'),
-    ttftowoff2 = require('gulp-ttf2woff2');
-
-
+    ttftowoff2 = require('gulp-ttf2woff2'),
+    svgSprite = require('gulp-svg-sprite');
 
 function browserSync() {
     browsersync.init({
@@ -119,6 +118,19 @@ function fonts() {
         .pipe(ttftowoff2())
         .pipe(dest(path.build.fonts))
 }
+
+gulp.task('svgsprite', function () {
+    return gulp.src([sourceFolder + `/iconsprite/*.svg`])
+        .pipe(svgSprite({
+            mode: {
+                stack: {
+                    sprite: '../icons/icons.svg',
+                    example: true
+                }
+            }
+        }))
+        .pipe(dest(path.build.img))
+})
 
 function watchfiles() {
     gulp.watch([path.watch.html], html);
