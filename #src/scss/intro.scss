@@ -1,0 +1,26 @@
+.intro {
+    padding: 120px 100px 85px 0;
+   
+    &__content {
+        margin-left: auto;
+        text-align: center;
+        max-width: 570px;
+    }
+
+    &__heading {
+        font-size: 38px;
+        font-weight: 300;
+        color: $headingColor;
+        margin-bottom: 13px;
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 300;
+        color: $textColor;
+    }
+
+}
+
+

@@ -51,7 +51,6 @@
                 transform: rotate(0deg);
                 fill: $primaryColor;
             }
-
         }
 
         &:hover {
@@ -82,7 +81,7 @@
     background: transparent;
     padding-top: 20px;
     z-index: 2;
-    top: 48px;
+    top: 38px;
     left: 4px;
     width: 200px;
     border-radius: 3px;
@@ -130,7 +129,7 @@
 
     &::before {
         position: absolute;
-        top: 14px;
+        top: 15px;
         left: 9px;
         width: 12px;
         height: 6px;
