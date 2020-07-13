@@ -16,12 +16,14 @@
 .navigation {
     flex: 1 0 auto;
 
-    &__list {
+    &__list {        
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: flex-end;
 
-        & li {
+        &>li {
+            position: relative;
             margin-right: 5px;
 
             &:last-child {
@@ -32,7 +34,7 @@
 
     &__link {
         display: inline-block;
-        padding: 20px 14px;
+        padding: 15px 14px;
         border: 1px solid $primaryColor;
         border-radius: 10px;
         transition: all 0.3s;
@@ -41,9 +43,21 @@
         text-transform: uppercase;
         color: $whiteColor;
 
+        &.active {
+            background-color: $whiteColor;
+            color: $primaryColor;
+
+            & .navigation__icon--menu {
+                transform: rotate(0deg);
+                fill: $primaryColor;
+            }
+
+        }
+
         &:hover {
             border: 1px solid $whiteColor;
         }
+
     }
 
     &__icon {
@@ -51,16 +65,37 @@
         height: 7px;
         fill: $primaryColor;
         margin-right: 10px; 
+
+        &--menu {
+            transform: rotate(-90deg);
+            fill: $whiteColor;
+            transition: all .3s ease-in-out;
+            margin-right: 4px; 
+        }
     }
 }
  
 .navigation-submenu {
+    display: block;
+    visibility: hidden;
     position: absolute;
+    background: transparent;
+    padding-top: 20px;
+    z-index: 2;
+    top: 48px;
+    left: 4px;
     width: 200px;
-    background-color: $whiteColor;
     border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+
+    &.open {
+        visibility: visible;
+        opacity: 1;
+    }
 
     &__list {
+        background-color: $whiteColor;
 
         & li { padding: 5px; }
     }
@@ -95,8 +130,8 @@
 
     &::before {
         position: absolute;
-        top: -6px;
-        left: 12px;
+        top: 14px;
+        left: 9px;
         width: 12px;
         height: 6px;
         content: '';
