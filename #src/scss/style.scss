@@ -20,12 +20,27 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
 .container {
     max-width: 1170px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 @import './variables';
 @import './contacts';
 @import './header';
 @import './intro';
+@import './live';

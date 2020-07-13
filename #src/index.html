@@ -8,12 +8,15 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body style="background: rgba(192, 192, 192, 0.979)">
-    @@include('_contacts.html')
-    @@include('_header.html')
-    <main class="main"> 
-        @@include('_intro.html') 
-    </main>
-    @@include('_svg.html')
+    <div class="wrapper">
+        @@include('_contacts.html')
+        @@include('_header.html')
+        <main class="main"> 
+            @@include('_intro.html')
+            @@include('_live.html') 
+        </main>
+        @@include('_svg.html')
+    </div>
     <script src="js/script.min.js"></script>
 </body>
 </html>
